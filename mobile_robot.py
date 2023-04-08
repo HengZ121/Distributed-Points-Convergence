@@ -94,6 +94,9 @@ class Robot:
         move_distance = min([limit, goal, self.sigma])
 
         # new position should be: (((1−t)x+t*c_x),((1−t)y+t*c_y)) where t is the ratio of move_distance / dist(i, c)
+        if goal == 0:
+            # it does not move
+            return
         new_x = ((1 - (ratio:=move_distance/goal)) * self.x +ratio*c_x)
         new_y = ((1 - ratio) * self.y + ratio * c_y)
         self.x = new_x
