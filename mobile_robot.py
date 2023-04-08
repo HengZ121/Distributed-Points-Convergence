@@ -119,7 +119,8 @@ class Robot:
         # Special Case, Python's limited computing capacity on float, cos(theta) slightly greater than 1 (e.g., 1.00000001), then let it be 1
         if cosine > 1: 
             cosine = 1
-        sine = math.sqrt(1 - cosine**2)
+        sq_sine = (1 - cosine**2)
+        sine = math.sqrt( 0 if sq_sine < 0 else sq_sine)
         return cosine, sine
 
 
