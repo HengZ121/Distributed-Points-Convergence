@@ -61,7 +61,7 @@ class Robot:
         if len(robots_s) == len(robots):
             allGathered = True
             for robot in robots_s:
-                if math.dist([self.x, self.y], [robot.x, robot.y]) > 1:
+                if math.dist([self.x, self.y], [robot.x, robot.y]) > 0.5:
                     # A robot is found at different position of current robot
                     allGathered = False
                     break
