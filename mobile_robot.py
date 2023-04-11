@@ -99,10 +99,17 @@ class Robot:
             return
         new_x = ((1 - (ratio:=move_distance/goal)) * self.x +ratio*c_x)
         new_y = ((1 - ratio) * self.y + ratio * c_y)
+
+        # add track (10 frames)
+        for frame in range(5, 0, -1):
+            self.track_x = np.append(self.track_x, ((1 - (1/frame)) * self.x +(1/frame)*new_x))
+            self.track_y = np.append(self.track_y, ((1 - (1/frame)) * self.y + (1/frame) * new_y))
+
+        # move robot
         self.x = new_x
         self.y = new_y
-        self.track_x = np.append(self.track_x, new_x)
-        self.track_y = np.append(self.track_y, new_y)
+
+        
 
     '''
     helper function, get trigonometrics (sine & cosine) on theta of ∠c,i,j

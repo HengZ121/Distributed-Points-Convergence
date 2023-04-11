@@ -56,7 +56,7 @@ def main():
         t.join()
 
     ani = animation.FuncAnimation(fig, partial(animate, ls_of_scatter = ls_of_scatter,ls_of_robots = ls_of_robots), repeat=True,
-                                    frames=len(ls_of_robots[0].track_x) - 1, interval=500)
+                                    frames=len(ls_of_robots[0].track_x) - 1, interval=100)
     plt.show()
 
 def animate(frame, ls_of_scatter, ls_of_robots):
