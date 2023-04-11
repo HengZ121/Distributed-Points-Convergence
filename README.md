@@ -22,6 +22,24 @@ To test this algorithm's validity, the locations of mobile robots are generated 
 1. Every mobile robot knows how many mobile robots are there in total
 2. Finite vision range of some constant V > 0 for mobile robots
 
+# Calculation of the Moving Destination
+
+[1] Section III. A POINT CONVERGENCE ALGORITHM
+
+If this robot i does not see any robot other than itself, it does not move; otherwise, find the center c of the smallest enclosing circle of the set of all visible robots 
+    
+1. moving to c in a distance smaller than sigma
+        
+2. For every visible robot j, this robot's position lies in the disc D(j) whose center is the midpoint of this robot and robot j and whose radius is V/2. (Details see [1] page 4 (821))
+
+
+***GOAL = dist(c, i)***  (1)
+
+$LIMIT = \displaystyle \min_{\forall j} \left( (dist(i,j)/2)*cos\theta_j + \sqrt{(V/2)^2 - ((dist(i,j)/2)*sin\theta_j)^2}  \right)$  where $\theta_j$ is ∠c,i,j  (2)
+
+***min{ GOAL, sigma, LIMIT }***  (1 & 2)
+
+
 # Required Packages:
     numpy
     argparse
