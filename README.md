@@ -1,5 +1,10 @@
 This Python repository implements a 2D convergence/gathering algorithm for mobile robots proposed by Hideki Ando et al. [1].
 
+# Demo 
+![](https://github.com/HengZ121/Distributed-Points-Convergence/blob/main/demo.gif)
+
+# Overview
+
 The robots are simulated using OOP (file mobile_robot.py), each robot has the following parameters:
 1. distinct id
 2. coordinates on a 2D plane
@@ -12,14 +17,18 @@ The implementation will first simulate the convergence algorithm and will record
 
 The robots calculated the moving direction and distance based on other robots who are within the visible range of themselves with the equations devised in [1]. Therefore, the deadlock is possible if we choose a deficient vision range for robots, or very few amount of robots over a relatively large 2D space because the robots may not see each other, so they don't move at all. In the default setting, 20 robots with a vision range of a radius of 40 on a 100 x 100 plane should terminate within 1 minute, so please manually interrupts the script and try another set of parameters if it doesn't terminate after a long time (them may never terminate with the current settings). By the way, to test this algorithm's validity, the locations of mobile robots are generated randomly every time; therefore, the time for the algorithm to terminate should fall in a normal distribution.
 
+# Assumptions
 
-Required Packages:
+1. Every mobile robot knows how many mobile robots are there in total
+2. Finite vision range of some constant V > 0 for mobile robots
+
+# Required Packages:
     numpy
     argparse
     matplotlib
     smallestenclosingcircle
 
-How to run:
+# How to run:
 
     python3 visualize_algo.py
 
