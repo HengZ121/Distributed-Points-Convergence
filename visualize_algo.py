@@ -23,7 +23,7 @@ def robot_is_moving(robot, ls_of_robots):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-n', type=int, default=10, help='The number of robots')
+    parser.add_argument('-n', type=int, default=20, help='The number of robots')
     parser.add_argument('-v', type=float, default=40, help='The radius of vision range of the robots')
     parser.add_argument('-s', type=float, default=10, help='The maximum moving distance of the robots')
     parser.add_argument('-x', type=int, default=100, help='The horizontal length of the space')
