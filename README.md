@@ -37,7 +37,7 @@ If this robot i does not see any robot other than itself, it does not move; othe
 
 $LIMIT = \displaystyle \min_{\forall j} \left( (dist(i,j)/2)*cos\theta_j + \sqrt{(V/2)^2 - ((dist(i,j)/2)*sin\theta_j)^2}  \right)$  where $\theta_j$ is ∠c,i,j  (2)
 
-***min{ GOAL, sigma, LIMIT }***  (1 & 2)
+***min( GOAL, sigma, LIMIT )***  (1 & 2)
 
 
 # Required Packages:
